@@ -15,7 +15,10 @@ app.use(
 );
 
 app.use(async (ctx, next) => {
-  ctx.response.set("Access-Control-Allow-Origin", "https://anna-kolycheva.io");
+  ctx.response.set(
+    "Access-Control-Allow-Origin",
+    "https://anna-kolycheva.github.io"
+  );
   await next();
 });
 
