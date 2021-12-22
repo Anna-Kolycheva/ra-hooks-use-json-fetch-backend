@@ -13,6 +13,12 @@ app.use(
     allowMethods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+app.use(async (ctx, next) => {
+  ctx.response.set("Access-Control-Allow-Origin", "https://anna-kolycheva.io");
+  await next();
+});
+
 app.use(koaBody());
 
 const router = new Router();
